@@ -14,7 +14,7 @@ class QuantumSolver():
         self.x = None
         self.dx = None
 
-    def construct_hamiltonian(self, x_min, x_max, num_points, m, omega, dx, h_bar):
+    def construct_hamiltonian(self, x_min, x_max, num_points, m, omega, h_bar):
         x = np.linspace(x_min, x_max, num_points)
         dx =  x[1] - x[0]
         V = 1/2 * m * omega**2 * x**2
