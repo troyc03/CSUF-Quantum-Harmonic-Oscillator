@@ -26,13 +26,6 @@ This lab delves into the quantum harmonic oscillator, a foundational concept in 
 - **Numerical Analysis**: Techniques like finite difference methods to approximate solutions to the Schrödinger equation.
 - **Eigenvalue Problems**: Determining energy levels of the quantum harmonic oscillator.
 
-## Kanban Board
-
-![Kanban Board](https://github.com/user-attachments/assets/example-kanban-board.png)
-
-- [Kanban User Stories/Requirements Models](https://docs.google.com/document/example-user-stories)
-- [Kanban Task List](https://docs.google.com/document/example-task-list)
-
 ## Installation
 
 1. **Install Anaconda**: Download and install [Anaconda](https://www.anaconda.com/products/distribution).
