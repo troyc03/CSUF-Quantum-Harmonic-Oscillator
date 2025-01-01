@@ -5,6 +5,7 @@ Version: 1.0
 Status: In development
 Purpose: Stores all utilities that will be used to perform this lab.
 """
+import numpy as np
 
 class QuantumUtils:
 

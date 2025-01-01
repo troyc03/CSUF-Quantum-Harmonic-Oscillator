@@ -43,7 +43,7 @@ class QuantumVisualizer:
         plt.figure(figsize=(10,6))
         plt.hlines(eigenvalues[:num_levels], xmin=0, xmax=1, color='red', linestyles='dashed')
         plt.title("Energy Levels")
-        plt.xlabel("")
+        plt.xlabel("t")
         plt.ylabel("Energy levels (E)")
         plt.xticks([])
         plt.legend()

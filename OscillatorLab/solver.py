@@ -1,3 +1,12 @@
+"""
+File name: solver.py
+Author name: Troy Chin
+Version: 1.1
+Status: In development
+Purpose: Solves the Hamiltonian matrix and the Schrodinger equation to compute the
+eigenstates of a quantum harmonic system.
+"""
+
 import numpy as np
 from scipy.linalg import eigh
 
