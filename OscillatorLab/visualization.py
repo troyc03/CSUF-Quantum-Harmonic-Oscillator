@@ -21,7 +21,7 @@ class QuantumVisualizer:
             wavefunctions (np.ndarray): Normalized wavefunctions.
             num_wavefunctions (int): Number of wavefunctions to plot.
         """
-        plt.figure(figsize=(8,6))
+        plt.figure(figsize=(10,6))
         for i in range(num_wavefunctions):
             plt.plot(x, wavefunctions[:,i], label="psi_{i}(x)")
         plt.title("Wavefunctions")
