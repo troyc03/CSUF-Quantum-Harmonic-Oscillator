@@ -25,5 +25,7 @@ def main():
     # Solve Hamiltonian
     eigenvalues, eigenvectors = solver.solve_hamiltonian()
 
+    pass
+
 if __name__ == "__main__":
     main()
