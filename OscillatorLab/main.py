@@ -1,7 +1,7 @@
 """
 File name: main.py
 Author name: Troy Chin
-Version: 1.1
+Version: 1.2
 Status: In development
 Purpose: Main entry of program.
 """
@@ -26,9 +26,10 @@ def main():
 
     # Solve Hamiltonian
     eigenvalues, eigenvectors = solver.solve_hamiltonian()
+    dx = solver.dx
 
     # Normalize wavefunctions
-    wavefunctions = QuantumUtils.normalize_wavefunctions(eigenvectors, solver.dx)
+    wavefunctions = QuantumUtils.normalize_wavefunctions(eigenvectors, dx)
 
     #Plot results
     QuantumVisualizer.plot_wavefunctions(solver.x, wavefunctions)

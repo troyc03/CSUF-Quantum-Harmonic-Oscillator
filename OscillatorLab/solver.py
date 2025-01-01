@@ -1,7 +1,7 @@
 """
 File name: solver.py
 Author name: Troy Chin
-Version: 1.1
+Version: 1.2
 Status: In development
 Purpose: Solves the Hamiltonian matrix and the Schrodinger equation to compute the
 eigenstates of a quantum harmonic system.
@@ -73,3 +73,7 @@ class QuantumSolver:
             raise ValueError("Hamiltonian matrix is not constructed.")
         eigenvalues, eigenvectors = eigh(self.H)
         return eigenvalues, eigenvectors
+
+class TimeEvolutionSolver:
+    def evolve_wavefunction(self, psi_0, time_steps, dt):
+        pass

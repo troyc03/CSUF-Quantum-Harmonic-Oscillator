@@ -1,7 +1,7 @@
 """
 File name: visualization.py
 Author name: Troy Chin
-Version: 1.0
+Version: 1.1
 Status: In development
 Purpose: Handles all visualization modules to graphically solve the Schrodinger
 Equation.
@@ -46,5 +46,13 @@ class QuantumVisualizer:
         plt.xlabel("t")
         plt.ylabel("Energy levels (E)")
         plt.xticks([])
-        plt.legend()
         plt.show()
+
+    def animate_wavefunction(wavefunctions, x, time_steps):
+        pass
+
+    def plot_probability_density(eigenvectors, x, eigenvalues):
+        pass
+
+    def generate_heatmap(probability_density, x, y):
+        pass
