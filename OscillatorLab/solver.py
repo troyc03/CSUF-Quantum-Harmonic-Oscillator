@@ -51,14 +51,11 @@ class QuantumSolver:
 
         # Fill Hamiltonian matrix
         for i in range(self.num_points):
-            # Diagonal elements
-            H[i, i] = 2 * abs(kinetic_coeff) + V[i]
-
-            # Off-diagonal elements
+            H[i, i] = 2 * abs(kinetic_coeff) + V[i]  # Diagonal elements
             if i > 0:
-                H[i, i - 1] = kinetic_coeff
+                H[i, i - 1] = kinetic_coeff  # Lower diagonal
             if i < self.num_points - 1:
-                H[i, i + 1] = kinetic_coeff
+                H[i, i + 1] = kinetic_coeff  # Upper diagonal
 
         self.H = H
 
@@ -70,10 +67,6 @@ class QuantumSolver:
             tuple: (eigenvalues, eigenvectors)
         """
         if self.H is None:
-            raise ValueError("Hamiltonian matrix is not constructed.")
+            raise ValueError("Hamiltonian matrix is not constructed. Call construct_hamiltonian() first.")
         eigenvalues, eigenvectors = eigh(self.H)
         return eigenvalues, eigenvectors
-
-class TimeEvolutionSolver:
-    def evolve_wavefunction(self, psi_0, time_steps, dt):
-        pass

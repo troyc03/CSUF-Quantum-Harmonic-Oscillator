@@ -8,6 +8,7 @@ Equation.
 """
 
 import matplotlib.pyplot as plt
+import numpy as np
 
 class QuantumVisualizer:
 
@@ -21,15 +22,15 @@ class QuantumVisualizer:
             wavefunctions (np.ndarray): Normalized wavefunctions.
             num_wavefunctions (int): Number of wavefunctions to plot.
         """
-        plt.figure(figsize=(10,6))
+        plt.figure(figsize=(10, 6))
         for i in range(num_wavefunctions):
-            plt.plot(x, wavefunctions[:,i], label="psi_{i}(x)")
+            plt.plot(x, wavefunctions[:, i], label=f"psi_{i}(x)")
         plt.title("Wavefunctions")
         plt.xlabel("x")
         plt.ylabel("Psi")
         plt.legend()
         plt.grid()
-
+        plt.show()
 
     @staticmethod
     def plot_energy_levels(eigenvalues, num_levels=5):
@@ -40,19 +41,11 @@ class QuantumVisualizer:
             eigenvalues (np.ndarray): Array of eigenvalues (energy levels).
             num_levels (int): Number of energy levels to plot.
         """
-        plt.figure(figsize=(10,6))
-        plt.hlines(eigenvalues[:num_levels], xmin=0, xmax=1, color='red', linestyles='dashed')
+        plt.figure(figsize=(10, 6))
+        plt.hlines(eigenvalues[:num_levels], xmin=0, xmax=0.5, color='red', linestyles='dashed')
         plt.title("Energy Levels")
-        plt.xlabel("t")
+        plt.xlabel("")
         plt.ylabel("Energy levels (E)")
         plt.xticks([])
+        plt.grid()
         plt.show()
-
-    def animate_wavefunction(wavefunctions, x, time_steps):
-        pass
-
-    def plot_probability_density(eigenvectors, x, eigenvalues):
-        pass
-
-    def generate_heatmap(probability_density, x, y):
-        pass

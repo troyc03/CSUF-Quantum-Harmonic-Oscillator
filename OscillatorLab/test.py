@@ -5,13 +5,13 @@ Version: 1.2
 Status: In development
 Purpose: Runs all integration or unit tests to test core functionality of the program.
 """
+
 import unittest
 import numpy as np
 from solver import QuantumSolver
 from utils import QuantumUtils
-from visualization import QuantumVisualizer
 
-class TestQuantumSolver:
+class TestQuantumSolver(unittest.TestCase):
 
     def setUp(self):
         """
@@ -24,12 +24,30 @@ class TestQuantumSolver:
         self.omega = 1.0
         self.hbar = 1.054e-34
         self.solver = QuantumSolver(self.x_min, self.x_max, self.num_points, self.m, self.omega, self.hbar)
+        self.solver.construct_hamiltonian()
 
     def test_hamiltonian_shape(self):
-        pass
+        """
+        Test if the Hamiltonian has the correct shape.
+        """
+        H = self.solver.H
+        self.assertEqual(H.shape, (self.num_points, self.num_points))
 
     def test_hamiltonian_symmetry(self):
-        pass
+        """
+        Test if the Hamiltonian matrix is symmetric.
+        """
+        H = self.solver.H
+        self.assertTrue(np.allclose(H, H.T), "Hamiltonian is not symmetric.")
 
-class TestQuantumVisualizer:
-    pass
+    def test_wavefunction_normalization(self):
+        """
+        Test if the wavefunctions are normalized.
+        """
+        _, eigenvectors = self.solver.solve_hamiltonian()
+        normalized = QuantumUtils.normalize_wavefunctions(eigenvectors, self.solver.dx)
+        norms = np.sum(normalized**2, axis=0) * self.solver.dx
+        self.assertTrue(np.allclose(norms, 1.0), "Wavefunctions are not normalized.")
+
+if __name__ == "__main__":
+    unittest.main()
